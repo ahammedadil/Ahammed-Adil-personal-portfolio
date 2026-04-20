@@ -82,21 +82,35 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    // Form submission prevent default for demo
+    // Form submission handling for Google Forms
     const form = document.querySelector('.contact-form');
+    const popup = document.getElementById('confirmation-popup');
+    const closePopupBtn = document.getElementById('close-popup');
+
     if (form) {
         form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const btn = form.querySelector('.submit-btn');
-            const originalText = btn.textContent;
-            btn.textContent = 'Message Sent!';
-            btn.style.background = 'linear-gradient(135deg, var(--aurora-3), var(--aurora-4))';
-            
+            // Show popup after a slight delay to ensure form is submitting
             setTimeout(() => {
+                if (popup) {
+                    popup.classList.add('active');
+                }
                 form.reset();
-                btn.textContent = originalText;
-                btn.style.background = 'linear-gradient(135deg, var(--aurora-1), var(--aurora-2))';
-            }, 3000);
+            }, 500);
+        });
+    }
+
+    if (closePopupBtn) {
+        closePopupBtn.addEventListener('click', () => {
+            popup.classList.remove('active');
+        });
+    }
+
+    // Close popup on click outside
+    if (popup) {
+        popup.addEventListener('click', (e) => {
+            if (e.target === popup) {
+                popup.classList.remove('active');
+            }
         });
     }
 });
