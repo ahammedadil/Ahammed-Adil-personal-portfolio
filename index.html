@@ -112,8 +112,8 @@
             <h2 class="section-title">Projects</h2>
             <div class="projects-grid">
                 <div class="project-card glass-card">
-                    <div class="project-img-container" style="overflow: hidden; height: 200px;">
-                        <img src="devsearch_cover.png" alt="DevSearch Cover" style="width: 100%; height: 100%; object-fit: cover;">
+                    <div class="project-img-container" style="overflow: hidden; display: flex; justify-content: center; align-items: center; background: rgba(0,0,0,0.2);">
+                        <img src="devsearch_cover.png" alt="DevSearch Cover" style="width: 100%; height: auto; display: block;">
                     </div>
                     <div class="project-info">
                         <h3>DevSearch</h3>
@@ -124,7 +124,12 @@
                             <span>JavaScript</span>
                             <span>Python / Django</span>
                         </div>
-                        <a href="https://github.com/ahammedadil/DevSearch" class="btn primary-btn small" target="_blank">View Project</a>
+                        <div class="project-links" style="display: flex; gap: 1rem; margin-top: auto;">
+                            <a href="#" class="btn primary-btn small" target="_blank">View Live Site</a>
+                            <a href="https://github.com/ahammedadil/DevSearch" class="btn secondary-btn small" target="_blank">
+                                <i class="fab fa-github"></i> GitHub Repo
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
